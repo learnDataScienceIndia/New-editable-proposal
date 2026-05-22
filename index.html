@@ -244,14 +244,23 @@
     .item-tbl tbody td.dtd{text-align:left;}
     .item-tbl tbody td.sr{font-size:11px;font-weight:600;color:var(--muted);width:34px;}
 
-    .item-tbl tbody td input{
-      width:100%;border:none;background:transparent;
+    .item-tbl tbody td input,
+    .item-tbl tbody td textarea{
+      width:100%;max-width:100%;border:none;background:transparent;
       text-align:center;font-family:'Inter',sans-serif;
       font-size:11.5px;color:var(--text);padding:3px 4px;outline:none;
       min-width: 70px;
+      resize: none;
+      overflow: hidden;
+      display: block;
     }
-    .item-tbl tbody td.dtd input{text-align:left;}
-    .item-tbl tbody td input:focus{
+    .item-tbl tbody td textarea{
+      height: 20px;
+    }
+    .item-tbl tbody td.dtd input,
+    .item-tbl tbody td.dtd textarea{text-align:left;}
+    .item-tbl tbody td input:focus,
+    .item-tbl tbody td textarea:focus{
       background:rgba(10,127,63,.06);border-radius:3px;
     }
 
@@ -827,7 +836,7 @@
 
     tr.innerHTML = `
       <td class="sr" id="sr${id}">${document.querySelectorAll('#tbody tr').length + 1}</td>
-      <td class="dtd"><input type="text" placeholder="Item description" id="d${id}"/></td>
+      <td class="dtd"><textarea placeholder="Item description" id="d${id}" rows="1"></textarea></td>
       ${uomCell}
       ${customCells}
       ${rateCell}
@@ -1075,13 +1084,17 @@
 
   /* ════════════════ AUTO-RESIZE INPUTS ════════════════ */
   document.addEventListener('input', function(e) {
-    if (e.target.tagName.toLowerCase() === 'input' && e.target.type === 'text') {
+    if (e.target.tagName.toLowerCase() === 'input' && e.target.type === 'text' && !e.target.closest('.item-tbl')) {
       const len = e.target.value.length;
       if (len > 8) {
         e.target.style.minWidth = (len * 8.5) + 'px';
       } else {
         e.target.style.minWidth = '70px';
       }
+    }
+    if (e.target.tagName.toLowerCase() === 'textarea' && e.target.closest('.item-tbl')) {
+      e.target.style.height = 'auto';
+      e.target.style.height = e.target.scrollHeight + 'px';
     }
   });
 </script>
