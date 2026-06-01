@@ -766,6 +766,8 @@
     // Hide/show footer
     document.getElementById('vatRow').style.display = isVatActive ? '' : 'none';
     
+    updateColspan();
+    
     // Recalculate
     document.querySelectorAll('#tbody tr').forEach(tr => {
       const qi = tr.querySelector('.qi');
@@ -873,7 +875,7 @@
   }
 
   function updateColspan() {
-    const baseColspan = 5;
+    const baseColspan = isVatActive ? 5 : 4;
     const newColspan = baseColspan + customCols.length;
     document.querySelectorAll('#footEmpty1, #footEmpty2, #footEmpty3').forEach(td => {
       td.setAttribute('colspan', newColspan);
