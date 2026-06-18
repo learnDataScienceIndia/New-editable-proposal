@@ -1,61 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Proposal – Reloop Recycling FZE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
   <style>
     /* ── Variables ── */
-    :root{
-      --green:#0a7f3f; --green-dk:#065c2c; --green-lt:#e8f5ed;
-      --blue:#2fa4d7;  --blue-dk:#1a6e9e;  --blue-lt:#e5f4fb;
-      --grey:#f4f6f8;  --border:#c8d4dc;
-      --text:#1a2332;  --muted:#6b7a8d;
+    :root {
+      --green: #0a7f3f;
+      --green-dk: #065c2c;
+      --green-lt: #e8f5ed;
+      --blue: #2fa4d7;
+      --blue-dk: #1a6e9e;
+      --blue-lt: #e5f4fb;
+      --grey: #f4f6f8;
+      --border: #c8d4dc;
+      --text: #1a2332;
+      --muted: #6b7a8d;
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
-    body{
-      font-family:'Inter',sans-serif;
-      background:#d0dae3;
-      color:var(--text);
-      display:flex; flex-direction:column; align-items:center;
-      padding:18px 12px 40px;
-      min-height:100vh;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #d0dae3;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 18px 12px 40px;
+      min-height: 100vh;
     }
 
     /* ═══════════════ TOOLBAR ═══════════════ */
-    .toolbar{
-      width:100%; max-width:900px;
-      display:flex; justify-content:space-between; align-items:center;
-      margin-bottom:12px; gap:10px; flex-wrap:wrap;
+    .toolbar {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-    .toolbar-left{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-    .lbl{font-size:11px;font-weight:700;color:var(--muted);}
 
-    select.cur-sel{
-      background:#fff; border:2px solid var(--green);
-      border-radius:7px; padding:5px 10px;
-      font-family:'Inter',sans-serif; font-size:13px;
-      font-weight:700; color:var(--green-dk); cursor:pointer; outline:none;
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
     }
-    .btn{
-      display:inline-flex; align-items:center; gap:6px;
-      font-family:'Inter',sans-serif; font-size:12px; font-weight:700;
-      padding:7px 16px; border-radius:20px; cursor:pointer;
-      transition:all .18s; border:none;
+
+    .lbl {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
     }
-    .btn-add{background:var(--green-lt);color:var(--green-dk);border:1.5px solid var(--green);}
-    .btn-add:hover{background:var(--green);color:#fff;}
-    .btn-print{
-      background:linear-gradient(135deg,var(--green),var(--blue));
-      color:#fff; box-shadow:0 4px 16px rgba(10,127,63,.28);
-      padding:8px 20px;
+
+    select.cur-sel {
+      background: #fff;
+      border: 2px solid var(--green);
+      border-radius: 7px;
+      padding: 5px 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green-dk);
+      cursor: pointer;
+      outline: none;
     }
-    .btn-print:hover{transform:translateY(-2px);box-shadow:0 7px 20px rgba(10,127,63,.38);}
-    .btn-print svg{width:15px;height:15px;fill:currentColor;}
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 7px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all .18s;
+      border: none;
+    }
+
+    .btn-add {
+      background: var(--green-lt);
+      color: var(--green-dk);
+      border: 1.5px solid var(--green);
+    }
+
+    .btn-add:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(10, 127, 63, .28);
+      padding: 8px 20px;
+    }
+
+    .btn-print:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 20px rgba(10, 127, 63, .38);
+    }
+
+    .btn-print svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
 
     /* Toggle Switch Style */
     .vat-toggle-wrap {
@@ -69,40 +136,58 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .vat-toggle-wrap:hover { border-color: var(--green); }
-    .vat-toggle-wrap input { cursor: pointer; }
-    .vat-toggle-lbl { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .vat-toggle-wrap:hover {
+      border-color: var(--green);
+    }
+
+    .vat-toggle-wrap input {
+      cursor: pointer;
+    }
+
+    .vat-toggle-lbl {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
     /* ═══════════════ INVOICE WRAPPER ═══════════════ */
-    .po-wrap{
-      width:100%; max-width:900px;
-      background:#fff; border-radius:12px; overflow:hidden;
-      box-shadow:0 8px 40px rgba(0,0,0,.14);
+    .po-wrap {
+      width: 100%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .14);
     }
 
     /* ═══════════════ HEADER ═══════════════ */
-    .po-header{background:#fff;}
-
-    .top-bar{
-      height:6px;
-      background:linear-gradient(90deg, var(--green) 0%, var(--blue) 100%);
+    .po-header {
+      background: #fff;
     }
 
-    .header-grid{
-      display:grid;
-      grid-template-columns:auto 1fr auto;
-      align-items:center;
-      border-bottom:2px solid var(--border);
-      background:var(--grey);
+    .top-bar {
+      height: 6px;
+      background: linear-gradient(90deg, var(--green) 0%, var(--blue) 100%);
+    }
+
+    .header-grid {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      border-bottom: 2px solid var(--border);
+      background: var(--grey);
       padding: 16px 20px;
       gap: 20px;
     }
 
-    .info-logo img{
-      width:90px;
-      height:90px;
-      object-fit:contain;
-      display:block;
+    .info-logo img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      display: block;
     }
 
     .header-company-info {
@@ -114,6 +199,7 @@
     .header-proposal-title {
       text-align: right;
     }
+
     .prop-title-badge {
       font-size: 20px;
       font-weight: 800;
@@ -124,26 +210,47 @@
     }
 
     /* Editable text */
-    [contenteditable]{
-      outline:none;
-      border-bottom:1px dashed transparent;
-      transition:border-color .2s;
-      display:inline-block;
-      min-width:20px;
-    }
-    [contenteditable]:hover{border-color:var(--blue);}
-    [contenteditable]:focus{
-      border-color:var(--green);
-      background:rgba(10,127,63,.04);
-      border-radius:2px;
+    [contenteditable] {
+      outline: none;
+      border-bottom: 1px dashed transparent;
+      transition: border-color .2s;
+      display: inline-block;
+      min-width: 20px;
     }
 
-    .co-name{font-size:16px;font-weight:800;color:var(--green-dk);}
-    .co-trn {font-size:12px;color:var(--muted);font-weight:500;}
-    .co-details {font-size:11px;color:var(--muted);line-height:1.5;margin-top:2px;}
+    [contenteditable]:hover {
+      border-color: var(--blue);
+    }
+
+    [contenteditable]:focus {
+      border-color: var(--green);
+      background: rgba(10, 127, 63, .04);
+      border-radius: 2px;
+    }
+
+    .co-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--green-dk);
+    }
+
+    .co-trn {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .co-details {
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-top: 2px;
+    }
 
     /* ═══════════════ BODY ═══════════════ */
-    .po-body{padding:20px 20px 16px;}
+    .po-body {
+      padding: 20px 20px 16px;
+    }
 
     /* TITLE SECTION */
     .hero-title-section {
@@ -152,12 +259,14 @@
       margin-bottom: 20px;
       border-bottom: 1.5px solid var(--border);
     }
+
     .hero-title {
       font-size: 22px;
       font-weight: 800;
       color: var(--green-dk);
       margin-bottom: 8px;
     }
+
     .hero-subtitle {
       font-size: 14px;
       font-weight: 500;
@@ -177,6 +286,7 @@
       border-radius: 8px;
       overflow: hidden;
     }
+
     .meta-box-head {
       background: var(--grey);
       padding: 8px 12px;
@@ -187,25 +297,31 @@
       letter-spacing: 1px;
       border-bottom: 1.5px solid var(--border);
     }
+
     .meta-box-body {
       padding: 10px 12px;
     }
+
     .meta-table {
       width: 100%;
       border-collapse: collapse;
     }
+
     .meta-table td {
       padding: 4px 0;
       font-size: 12px;
       vertical-align: top;
     }
+
     .meta-table td.lbl {
       font-weight: 600;
       color: var(--muted);
       width: 100px;
       white-space: nowrap;
     }
-    .meta-table input, .meta-table textarea {
+
+    .meta-table input,
+    .meta-table textarea {
       width: 100%;
       border: none;
       background: transparent;
@@ -217,47 +333,105 @@
       word-wrap: break-word;
       overflow-wrap: break-word;
     }
+
     .meta-table textarea {
       height: 50px;
     }
 
     /* ITEMS TABLE */
-    .item-tbl{width:100%;border-collapse:collapse;font-size:11.5px;}
-    .item-tbl thead tr{
-      background:linear-gradient(90deg,var(--green-dk),var(--blue-dk));
-      color:#fff;
+    .item-tbl {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11.5px;
     }
-    .item-tbl thead th{
-      padding:10px 8px;font-size:10px;font-weight:700;
-      letter-spacing:1px;text-transform:uppercase;
-      border:1px solid rgba(255,255,255,.15);text-align:center;white-space:nowrap;
-    }
-    .item-tbl thead th.dh{text-align:left;}
 
-    .item-tbl tbody tr{background:#fff;}
-    .item-tbl tbody tr:nth-child(even){background:#f8fbfc;}
-    .item-tbl tbody tr:hover{background:var(--green-lt);}
-    .item-tbl tbody td{
-      border:1px solid var(--border);
-      padding:3px 5px;text-align:center;vertical-align:middle;
+    .item-tbl thead tr {
+      background: linear-gradient(90deg, var(--green-dk), var(--blue-dk));
+      color: #fff;
     }
-    .item-tbl tbody td.dtd{text-align:left;}
-    .item-tbl tbody td.sr{font-size:11px;font-weight:600;color:var(--muted);width:34px;}
 
-    .item-tbl tbody td input, .item-tbl tbody td textarea {
-      width:100%;border:none;background:transparent;
-      text-align:center;font-family:'Inter',sans-serif;
-      font-size:11.5px;color:var(--text);padding:3px 4px;outline:none;
+    .item-tbl thead th {
+      padding: 10px 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, .15);
+      text-align: center;
+      white-space: nowrap;
     }
-    .item-tbl tbody td.dtd input, .item-tbl tbody td.dtd textarea {text-align:left;}
+
+    .item-tbl thead th.dh {
+      text-align: left;
+    }
+
+    .item-tbl tbody tr {
+      background: #fff;
+    }
+
+    .item-tbl tbody tr:nth-child(even) {
+      background: #f8fbfc;
+    }
+
+    .item-tbl tbody tr:hover {
+      background: var(--green-lt);
+    }
+
+    .item-tbl tbody td {
+      border: 1px solid var(--border);
+      padding: 3px 5px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .item-tbl tbody td.dtd {
+      text-align: left;
+    }
+
+    .item-tbl tbody td.sr {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      width: 34px;
+    }
+
+    .item-tbl tbody td input,
     .item-tbl tbody td textarea {
-      resize:none; overflow:hidden; min-height:22px; line-height:1.4; vertical-align:middle; display:block;
-    }
-    .item-tbl tbody td input:focus, .item-tbl tbody td textarea:focus {
-      background:rgba(10,127,63,.06);border-radius:3px;
+      width: 100%;
+      border: none;
+      background: transparent;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      color: var(--text);
+      padding: 3px 4px;
+      outline: none;
     }
 
-    .amt-inp{font-weight:600;color:var(--green-dk) !important;}
+    .item-tbl tbody td.dtd input,
+    .item-tbl tbody td.dtd textarea {
+      text-align: left;
+    }
+
+    .item-tbl tbody td textarea {
+      resize: none;
+      overflow: hidden;
+      min-height: 22px;
+      line-height: 1.4;
+      vertical-align: middle;
+      display: block;
+    }
+
+    .item-tbl tbody td input:focus,
+    .item-tbl tbody td textarea:focus {
+      background: rgba(10, 127, 63, .06);
+      border-radius: 3px;
+    }
+
+    .amt-inp {
+      font-weight: 600;
+      color: var(--green-dk) !important;
+    }
 
     /* Column Controls */
     .col-ctrls {
@@ -266,9 +440,10 @@
       gap: 4px;
       margin-top: 4px;
     }
+
     .col-btn {
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
       color: #fff;
       font-size: 10px;
       padding: 2px 4px;
@@ -276,530 +451,813 @@
       border-radius: 3px;
       line-height: 1;
     }
-    .col-btn:hover { background: rgba(255,255,255,0.4); }
-    .col-btn-rm { color: #ffcccc; border-color: #ffcccc; }
-    .col-btn-rm:hover { background: #ffcccc; color: #c0392b; }
+
+    .col-btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .col-btn-rm {
+      color: #ffcccc;
+      border-color: #ffcccc;
+    }
+
+    .col-btn-rm:hover {
+      background: #ffcccc;
+      color: #c0392b;
+    }
 
     /* Remove row */
-    .rm-btn{
-      background:none;border:none;cursor:pointer;
-      color:#c0392b;font-size:14px;padding:2px 5px;
-      border-radius:4px;transition:background .15s;
+    .rm-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #c0392b;
+      font-size: 14px;
+      padding: 2px 5px;
+      border-radius: 4px;
+      transition: background .15s;
     }
-    .rm-btn:hover{background:#fdecea;}
+
+    .rm-btn:hover {
+      background: #fdecea;
+    }
 
     /* Grand total */
-    .gt-tr{background:linear-gradient(90deg,var(--green-dk),var(--blue-dk)) !important;}
-    .gt-tr td{padding:9px 12px !important;border-color:transparent !important;}
-    .gt-lbl{font-size:13px;font-weight:800;color:#fff;text-align:right !important;letter-spacing:.5px;}
-    .gt-val{font-size:17px;font-weight:800;color:#fff;text-align:center !important;white-space:nowrap;min-width:120px;}
+    .gt-tr {
+      background: linear-gradient(90deg, var(--green-dk), var(--blue-dk)) !important;
+    }
+
+    .gt-tr td {
+      padding: 9px 12px !important;
+      border-color: transparent !important;
+    }
+
+    .gt-lbl {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      text-align: right !important;
+      letter-spacing: .5px;
+    }
+
+    .gt-val {
+      font-size: 17px;
+      font-weight: 800;
+      color: #fff;
+      text-align: center !important;
+      white-space: nowrap;
+      min-width: 120px;
+    }
 
     /* ═══════════════ ROW CONTROLS ═══════════════ */
-    .row-ctrl{
-      display:flex;align-items:center;gap:10px;
-      padding:7px 20px;background:var(--grey);
-      border-top:1px solid var(--border);
-      border-bottom:1px solid var(--border);
+    .row-ctrl {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 20px;
+      background: var(--grey);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    .row-cnt{font-size:11px;color:var(--muted);}
+
+    .row-cnt {
+      font-size: 11px;
+      color: var(--muted);
+    }
 
     /* ═══════════════ PAGE 2 — TERMS & CONDITIONS ═══════════════ */
-    .page2-wrap{
-      width:100%; max-width:900px;
-      background:#fff; border-radius:12px; overflow:hidden;
-      box-shadow:0 8px 40px rgba(0,0,0,.14);
-      margin-top:30px;
+    .page2-wrap {
+      width: 100%;
+      max-width: 900px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, .14);
+      margin-top: 30px;
     }
-    .page2-header{
-      background:linear-gradient(135deg, var(--green-dk) 0%, var(--blue-dk) 100%);
-      padding:28px 30px;
-      display:flex; align-items:center; gap:16px;
+
+    .page2-header {
+      background: linear-gradient(135deg, var(--green-dk) 0%, var(--blue-dk) 100%);
+      padding: 28px 30px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
-    .page2-header-icon{
-      width:44px;height:44px;border-radius:10px;
-      background:rgba(255,255,255,.15);
-      display:flex;align-items:center;justify-content:center;
-      font-size:22px;flex-shrink:0;
+
+    .page2-header-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
     }
-    .page2-header-text h2{
-      font-size:18px;font-weight:800;color:#fff;
-      letter-spacing:1.5px;text-transform:uppercase;margin-bottom:3px;
+
+    .page2-header-text h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
     }
-    .page2-header-text p{
-      font-size:11px;color:rgba(255,255,255,.75);font-weight:500;
+
+    .page2-header-text p {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .75);
+      font-weight: 500;
     }
-    .page2-body{
-      padding:24px 28px 28px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
+
+    .page2-body {
+      padding: 24px 28px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
     }
-    .page2-card{
-      border:1.5px solid var(--border);
-      border-radius:10px;
-      overflow:hidden;
-      transition:box-shadow .2s;
+
+    .page2-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: box-shadow .2s;
     }
-    .page2-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.07);}
-    .page2-card.full-width{
-      grid-column:1 / -1;
+
+    .page2-card:hover {
+      box-shadow: 0 4px 18px rgba(0, 0, 0, .07);
     }
-    .page2-card-head{
-      padding:10px 16px;
-      background:var(--grey);
-      border-bottom:1.5px solid var(--border);
-      display:flex;align-items:center;gap:8px;
+
+    .page2-card.full-width {
+      grid-column: 1 / -1;
     }
-    .page2-card-icon{
-      width:24px;height:24px;border-radius:6px;
-      background:linear-gradient(135deg,var(--green),var(--blue));
-      display:flex;align-items:center;justify-content:center;
-      font-size:12px;color:#fff;flex-shrink:0;
+
+    .page2-card-head {
+      padding: 10px 16px;
+      background: var(--grey);
+      border-bottom: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    .page2-card-title{
-      font-size:11.5px;font-weight:800;color:var(--text);
-      text-transform:uppercase;letter-spacing:1px;
+
+    .page2-card-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, var(--green), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #fff;
+      flex-shrink: 0;
     }
-    .page2-card-body{
-      padding:14px 18px;
-      font-size:11.5px;color:var(--text);line-height:1.7;
+
+    .page2-card-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
-    .page2-card-body ul{
-      margin-left:16px;margin-top:6px;
+
+    .page2-card-body {
+      padding: 14px 18px;
+      font-size: 11.5px;
+      color: var(--text);
+      line-height: 1.7;
     }
-    .page2-card-body li{
-      margin-bottom:6px;
+
+    .page2-card-body ul {
+      margin-left: 16px;
+      margin-top: 6px;
     }
-    .page2-card-body li strong{
-      color:var(--green-dk);
+
+    .page2-card-body li {
+      margin-bottom: 6px;
     }
-    .page2-footer-strip{
-      background:linear-gradient(90deg,var(--blue-dk),var(--green-dk));
-      padding:10px 28px;
-      font-size:10px;color:rgba(255,255,255,.85);font-weight:500;
-      text-align:center;
-      letter-spacing:.5px;
+
+    .page2-card-body li strong {
+      color: var(--green-dk);
+    }
+
+    .page2-footer-strip {
+      background: linear-gradient(90deg, var(--blue-dk), var(--green-dk));
+      padding: 10px 28px;
+      font-size: 10px;
+      color: rgba(255, 255, 255, .85);
+      font-weight: 500;
+      text-align: center;
+      letter-spacing: .5px;
     }
 
     /* ═══════════════ BOTTOM SECTION (PAYMENT + SIGNATURE) ═══════════════ */
-    .bottom-section{
-      display:flex; justify-content:space-between; align-items:flex-end;
-      padding:20px;
-      gap:20px;
+    .bottom-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 20px;
+      gap: 20px;
     }
-    .pay-head{
-      font-size:11px;font-weight:800;letter-spacing:1.5px;
-      text-transform:uppercase;color:var(--text);
-      padding-bottom:5px;margin-bottom:8px;
-      border-bottom:2px solid var(--green);
-      display:inline-block;
+
+    .pay-head {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text);
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+      border-bottom: 2px solid var(--green);
+      display: inline-block;
     }
-    .pay-tbl{width:auto;border-collapse:collapse;font-size:11.5px;}
-    .pay-tbl td{padding:5px 12px;border:1.5px solid var(--border);}
-    .pay-tbl td.plbl{font-weight:700;background:var(--grey);white-space:nowrap;width:120px;}
-    .pay-tbl td input{
-      border:none;outline:none;background:transparent;
-      font-family:'Inter',sans-serif;font-size:11.5px;color:var(--text);
-      min-width:180px;
+
+    .pay-tbl {
+      width: auto;
+      border-collapse: collapse;
+      font-size: 11.5px;
+    }
+
+    .pay-tbl td {
+      padding: 5px 12px;
+      border: 1.5px solid var(--border);
+    }
+
+    .pay-tbl td.plbl {
+      font-weight: 700;
+      background: var(--grey);
+      white-space: nowrap;
+      width: 120px;
+    }
+
+    .pay-tbl td input {
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      color: var(--text);
+      min-width: 180px;
     }
 
     /* Signature col */
-    .sig-col { text-align: center; }
-    .sig-lbl{font-size:10px;font-weight:700;text-transform:uppercase;
-             color:var(--muted);letter-spacing:1px;margin-bottom:8px;}
-    .sig-row{display:inline-flex;align-items:flex-end;gap:20px;}
-    .sig-area{flex:0 0 auto; display:flex; flex-direction:column; align-items:center;}
+    .sig-col {
+      text-align: center;
+    }
+
+    .sig-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .sig-row {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
+    .sig-area {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .sig-placeholder {
       height: 70px;
       width: 170px;
     }
-    .sig-line{border-bottom:1.5px solid var(--green);margin-top:2px;width:170px;}
-    .sig-line-lbl{font-size:9.5px;font-weight:600;color:var(--text);margin-top:5px;
-                  text-transform:uppercase;letter-spacing:.5px;}
-    .stamp-placeholder{
-      width:90px;height:90px;
-      border:1.5px dashed var(--border);
+
+    .sig-line {
+      border-bottom: 1.5px solid var(--green);
+      margin-top: 2px;
+      width: 170px;
+    }
+
+    .sig-line-lbl {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .stamp-placeholder {
+      width: 90px;
+      height: 90px;
+      border: 1.5px dashed var(--border);
       border-radius: 50%;
-      display:flex; align-items:center; justify-content:center;
-      font-size: 10px; color: var(--muted); font-weight: 600; text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
       margin-bottom: 10px;
     }
 
     /* ═══════════════ FOOTER ═══════════════ */
-    .po-footer{position:relative;overflow:hidden;}
+    .po-footer {
+      position: relative;
+      overflow: hidden;
+    }
 
     /* Bottom strip */
-    .foot-strip{
-      background:linear-gradient(90deg,var(--blue-dk),var(--green-dk));
-      display:flex;
-      justify-content:space-between;
-      align-items:center;padding:8px 20px;
-      font-size:10px;color:rgba(255,255,255,.85);font-weight:500;
+    .foot-strip {
+      background: linear-gradient(90deg, var(--blue-dk), var(--green-dk));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 20px;
+      font-size: 10px;
+      color: rgba(255, 255, 255, .85);
+      font-weight: 500;
     }
 
     /* ═══════════════ PRINT ═══════════════ */
-    @media print{
-      @page{size:A4 portrait;margin:8mm;}
-      html,body{background:#fff !important;padding:0;margin:0;display:block;}
-      .toolbar,.row-ctrl,.rm-btn,.rm-col-btn,.no-print{display:none !important;}
-      .po-wrap,.page2-wrap{max-width:100%;box-shadow:none;border-radius:0;border:none;}
-      *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important;}
-      .po-body{padding:12px 16px !important;}
-      .header-grid { padding: 12px 16px !important; }
-      .hero-title-section { padding: 5px 16px 15px !important; margin-bottom: 15px !important;}
-      .bottom-section { padding: 12px 16px 16px !important; }
-      .meta-box-body { padding: 6px 10px !important; }
-      [contenteditable]{border-bottom:none !important;background:transparent !important;}
-      input, textarea { background:transparent !important; resize: none !important;}
-      
-      .item-tbl{page-break-inside:avoid;}
-      .item-tbl thead th{padding:5px 6px !important;}
-      .item-tbl tbody td{padding:2px 4px !important;}
-      .gt-tr td{padding:7px 10px !important;}
-      .bottom-section{padding:9px 13px 12px !important;}
-      [contenteditable]{border-bottom:none !important;background:transparent !important;}
-      .item-tbl tbody td input{background:transparent !important;}
-      .pay-tbl td input{background:transparent !important;}
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 8mm;
+      }
+
+      html,
+      body {
+        background: #fff !important;
+        padding: 0;
+        margin: 0;
+        display: block;
+      }
+
+      .toolbar,
+      .row-ctrl,
+      .rm-btn,
+      .rm-col-btn,
+      .no-print {
+        display: none !important;
+      }
+
+      .po-wrap,
+      .page2-wrap {
+        max-width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .po-body {
+        padding: 12px 16px !important;
+      }
+
+      .header-grid {
+        padding: 12px 16px !important;
+      }
+
+      .hero-title-section {
+        padding: 5px 16px 15px !important;
+        margin-bottom: 15px !important;
+      }
+
+      .bottom-section {
+        padding: 12px 16px 16px !important;
+      }
+
+      .meta-box-body {
+        padding: 6px 10px !important;
+      }
+
+      [contenteditable] {
+        border-bottom: none !important;
+        background: transparent !important;
+      }
+
+      input,
+      textarea {
+        background: transparent !important;
+        resize: none !important;
+      }
+
+      .item-tbl {
+        page-break-inside: avoid;
+      }
+
+      .item-tbl thead th {
+        padding: 5px 6px !important;
+      }
+
+      .item-tbl tbody td {
+        padding: 2px 4px !important;
+      }
+
+      .gt-tr td {
+        padding: 7px 10px !important;
+      }
+
+      .bottom-section {
+        padding: 9px 13px 12px !important;
+      }
+
+      [contenteditable] {
+        border-bottom: none !important;
+        background: transparent !important;
+      }
+
+      .item-tbl tbody td input {
+        background: transparent !important;
+      }
+
+      .pay-tbl td input {
+        background: transparent !important;
+      }
 
       /* Page 2 prints on new page */
-      .page2-wrap{page-break-before:always;margin-top:0 !important;}
-      .page2-body{padding:16px 20px !important;gap:16px !important;}
-      .page2-card{page-break-inside:avoid;}
+      .page2-wrap {
+        page-break-before: always;
+        margin-top: 0 !important;
+      }
+
+      .page2-body {
+        padding: 16px 20px !important;
+        gap: 16px !important;
+      }
+
+      .page2-card {
+        page-break-inside: avoid;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ══════════ TOOLBAR ══════════ -->
-<div class="toolbar no-print" id="toolbar">
-  <div class="toolbar-left">
-    <span class="lbl">Currency:</span>
-    <select class="cur-sel" id="curSel" onchange="applyCurrency()">
-      <option value="AED" selected>🇦🇪 AED</option>
-      <option value="USD">🇺🇸 USD</option>
-      <option value="EUR">🇪🇺 EUR</option>
-      <option value="GBP">🇬🇧 GBP</option>
-      <option value="INR">🇮🇳 INR</option>
-    </select>
-    <label class="vat-toggle-wrap" id="vatToggleWrap">
-      <input type="checkbox" id="vatToggle" checked onchange="toggleVat()"/>
-      <span class="vat-toggle-lbl">Include VAT 5%</span>
-    </label>
-    <button class="btn btn-add" onclick="addCustomCol()">＋ Add Col</button>
-    <button class="btn btn-add" onclick="addRow()">＋ Add Row</button>
-  </div>
-  <button class="btn btn-print" onclick="window.print()">
-    <svg viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
-    Download as PDF
-  </button>
-</div>
-
-<!-- ══════════ DOCUMENT WRAPPER ══════════ -->
-<div class="po-wrap" id="inv-doc">
-
-  <!-- ══ HEADER ══ -->
-  <header class="po-header">
-    <div class="top-bar"></div>
-    <div class="header-grid">
-      <div class="info-logo">
-        <img src="logo.png" alt="Reloop Recycling Logo"/>
-      </div>
-      <div class="header-company-info">
-        <div class="co-name" contenteditable="true">Reloop Recycling FZE</div>
-        <div class="co-trn">TRN: <span contenteditable="true">105170462300003</span></div>
-        <div class="co-details">
-          <span contenteditable="true">info@reloopglobal.com</span> | <span contenteditable="true">+971 543252882</span><br/>
-          <span contenteditable="true">RA08 TC05, JAFZA, Dubai, UAE</span>
-        </div>
-      </div>
-      <div class="header-proposal-title">
-        <div class="prop-title-badge" contenteditable="true">Proposal</div>
-        <div style="font-size:11px;color:var(--muted);font-weight:600;">Date: <input type="text" id="propDate" style="border:none;border-bottom:1px solid #ccc;outline:none;font-family:inherit;width:100px;text-align:center;" value="22-Apr-2026"/></div>
-      </div>
+  <!-- ══════════ TOOLBAR ══════════ -->
+  <div class="toolbar no-print" id="toolbar">
+    <div class="toolbar-left">
+      <span class="lbl">Currency:</span>
+      <select class="cur-sel" id="curSel" onchange="applyCurrency()">
+        <option value="AED" selected>🇦🇪 AED</option>
+        <option value="USD">🇺🇸 USD</option>
+        <option value="EUR">🇪🇺 EUR</option>
+        <option value="GBP">🇬🇧 GBP</option>
+        <option value="INR">🇮🇳 INR</option>
+      </select>
+      <label class="vat-toggle-wrap" id="vatToggleWrap">
+        <input type="checkbox" id="vatToggle" checked onchange="toggleVat()" />
+        <span class="vat-toggle-lbl">Include VAT 5%</span>
+      </label>
+      <button class="btn btn-add" onclick="addCustomCol()">＋ Add Col</button>
+      <button class="btn btn-add" onclick="addRow()">＋ Add Row</button>
     </div>
-  </header>
-
-  <!-- ══ BODY ══ -->
-  <main class="po-body">
-
-    <!-- Title Section -->
-    <div class="hero-title-section">
-      <div class="hero-title" contenteditable="true">Proposal for Secure Product Destruction & Recycling</div>
-      <div class="hero-subtitle" contenteditable="true">Working to make you a global sustainability champion</div>
-    </div>
-
-    <!-- Meta Details Grid -->
-    <div class="meta-grid">
-      <!-- Prepared For (Client) -->
-      <div class="meta-box">
-        <div class="meta-box-head">Prepared For / Bill To</div>
-        <div class="meta-box-body">
-          <table class="meta-table">
-            <tr>
-              <td class="lbl">Company Name:</td>
-              <td><input type="text" placeholder="Client Company Name"/></td>
-            </tr>
-            <tr>
-              <td class="lbl">Address:</td>
-              <td><textarea placeholder="Client Address"></textarea></td>
-            </tr>
-            <tr>
-              <td class="lbl">Contact Person:</td>
-              <td><input type="text" placeholder="Contact Name"/></td>
-            </tr>
-            <tr>
-              <td class="lbl">Phone:</td>
-              <td><input type="text" placeholder="+971 XX XXX XXXX"/></td>
-            </tr>
-            <tr>
-              <td class="lbl">Email:</td>
-              <td><input type="text" placeholder="email@client.com"/></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- Prepared By (Reloop) -->
-      <div class="meta-box">
-        <div class="meta-box-head">Prepared By</div>
-        <div class="meta-box-body">
-          <table class="meta-table">
-            <tr>
-              <td class="lbl">Name:</td>
-              <td><input type="text" value="Smit Chauhan"/></td>
-            </tr>
-            <tr>
-              <td class="lbl">Position:</td>
-              <td><input type="text" value="Business Development Executive"/></td>
-            </tr>
-            <tr>
-              <td class="lbl">Email:</td>
-              <td><input type="text" value="smit@reloopglobal.com"/></td>
-            </tr>
-            <tr>
-              <td class="lbl">Phone:</td>
-              <td><input type="text" value="+971 543252882"/></td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <!-- Service Table -->
-    <table class="item-tbl" id="itemTbl">
-      <thead>
-        <tr>
-          <th style="width:34px" data-fixed="Sr.No">Sr.No</th>
-          <th class="dh" style="min-width:150px;" data-fixed="Description"><span contenteditable="true" style="outline:none;">Description</span></th>
-          <th style="min-width:50px" data-fixed="Qty"><span contenteditable="true" style="outline:none;">Qty</span></th>
-          <th style="min-width:90px" data-fixed="Unit Price"><span contenteditable="true" style="outline:none;">Unit Price</span> (<span id="curHdr">AED</span>)</th>
-          <th style="min-width:90px" data-fixed="Total"><span contenteditable="true" style="outline:none;">Total</span> (<span id="curHdr4">AED</span>)</th>
-          <th style="min-width:85px" id="vatTh" data-fixed="VAT 5%"><span contenteditable="true" style="outline:none;">VAT 5%</span> (<span id="curHdr3">AED</span>)</th>
-          <th style="min-width:110px" data-fixed="Grand Total"><span contenteditable="true" style="outline:none;">Grand Total</span> (<span id="curHdr2">AED</span>):</th>
-          <th style="width:30px" class="no-print" data-fixed="Action"></th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-      <tfoot>
-        <!-- Subtotal Row -->
-        <tr>
-          <td id="footEmpty1" colspan="5" style="border:none; background:transparent;"></td>
-          <td style="font-weight:700; text-align:center; border:1px solid var(--border); font-size:12px; padding:7px; background:#fff;"><span contenteditable="true" style="outline:none;">Subtotal</span></td>
-          <td style="font-weight:800; text-align:center; border:1px solid var(--border); font-size:13px; padding:7px; background:#fff; color:var(--text);" id="subTotalVal"><span class="curSymDisplay">AED</span> 0.00</td>
-          <td class="no-print" style="border:none; background:transparent;"></td>
-        </tr>
-        <!-- VAT Row -->
-        <tr id="vatRow">
-          <td id="footEmpty2" colspan="5" style="border:none; background:transparent;"></td>
-          <td style="font-weight:700; text-align:center; border:1px solid var(--border); font-size:12px; padding:7px; background:#fff;"><span contenteditable="true" style="outline:none;">VAT (5%)</span></td>
-          <td style="font-weight:800; text-align:center; border:1px solid var(--border); font-size:13px; padding:7px; background:#fff; color:var(--text);" id="vatVal"><span class="curSymDisplay">AED</span> 0.00</td>
-          <td class="no-print" style="border:none; background:transparent;"></td>
-        </tr>
-        <!-- Grand Total Row -->
-        <tr class="gt-tr">
-          <td id="footEmpty3" colspan="5" style="border:none;"></td>
-          <td class="gt-lbl" style="vertical-align:middle; text-align:center !important;"><span contenteditable="true" style="outline:none;">Grand Total</span></td>
-          <td class="gt-val" id="gtVal" style="vertical-align:middle;"><span id="curSymDisplay">AED</span> 0.00</td>
-          <td class="no-print" style="background:transparent;border:none;"></td>
-        </tr>
-      </tfoot>
-    </table>
-
-  </main>
-
-  <!-- ══ ROW CONTROLS ══ -->
-  <div class="row-ctrl no-print">
-    <button class="btn btn-add" onclick="addRow()">＋ Add Row</button>
-    <span class="row-cnt" id="rowCnt"></span>
+    <button class="btn btn-print" onclick="window.print()">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z" />
+      </svg>
+      Download as PDF
+    </button>
   </div>
 
+  <!-- ══════════ DOCUMENT WRAPPER ══════════ -->
+  <div class="po-wrap" id="inv-doc">
 
+    <!-- ══ HEADER ══ -->
+    <header class="po-header">
+      <div class="top-bar"></div>
+      <div class="header-grid">
+        <div class="info-logo">
+          <img src="logo.png" alt="Reloop Recycling Logo" />
+        </div>
+        <div class="header-company-info">
+          <div class="co-name" contenteditable="true">Reloop Recycling FZE</div>
+          <div class="co-trn">TRN: <span contenteditable="true">105170462300003</span></div>
+          <div class="co-details">
+            <span contenteditable="true">info@reloopglobal.com</span> | <span contenteditable="true">+971
+              543252882</span><br />
+            <span contenteditable="true">RA08 TC05, JAFZA, Dubai, UAE</span>
+          </div>
+        </div>
+        <div class="header-proposal-title">
+          <div class="prop-title-badge" contenteditable="true">Proposal</div>
+          <div style="font-size:11px;color:var(--muted);font-weight:600;">Date: <input type="text" id="propDate"
+              style="border:none;border-bottom:1px solid #ccc;outline:none;font-family:inherit;width:100px;text-align:center;"
+              value="22-Apr-2026" /></div>
+        </div>
+      </div>
+    </header>
 
-  <!-- ══ BOTTOM SECTION (PAYMENT + SIGNATURE) ══ -->
-  <div class="bottom-section">
-    <!-- Payment Details -->
-    <div class="pay-section">
-      <div class="pay-head">Bank Details</div>
-      <table class="pay-tbl">
-        <tr>
-          <td class="plbl">Payment terms</td>
-          <td><input type="text" id="payTerms" value="Advance / As Agreed"/></td>
-        </tr>
-        <tr>
-          <td class="plbl">Bank Name</td>
-          <td><input type="text" id="bankName" value="ADCB"/></td>
-        </tr>
-        <tr>
-          <td class="plbl">Account Name</td>
-          <td><input type="text" id="accName" value="Reloop Recycling FZE"/></td>
-        </tr>
-        <tr>
-          <td class="plbl">Account Number</td>
-          <td><input type="text" id="accNum" value="14328262920001"/></td>
-        </tr>
-        <tr>
-          <td class="plbl">IBAN</td>
-          <td><input type="text" id="ibanNum" value="AE06 0030 0143 2826 2920 001"/></td>
-        </tr>
+    <!-- ══ BODY ══ -->
+    <main class="po-body">
+
+      <!-- Title Section -->
+      <div class="hero-title-section">
+        <div class="hero-title" contenteditable="true">Proposal for Secure Product Destruction & Recycling</div>
+        <div class="hero-subtitle" contenteditable="true">Working to make you a global sustainability champion</div>
+      </div>
+
+      <!-- Meta Details Grid -->
+      <div class="meta-grid">
+        <!-- Prepared For (Client) -->
+        <div class="meta-box">
+          <div class="meta-box-head">Prepared For / Bill To</div>
+          <div class="meta-box-body">
+            <table class="meta-table">
+              <tr>
+                <td class="lbl">Company Name:</td>
+                <td><input type="text" placeholder="Client Company Name" /></td>
+              </tr>
+              <tr>
+                <td class="lbl">Address:</td>
+                <td><textarea placeholder="Client Address"></textarea></td>
+              </tr>
+              <tr>
+                <td class="lbl">Contact Person:</td>
+                <td><input type="text" placeholder="Contact Name" /></td>
+              </tr>
+              <tr>
+                <td class="lbl">Phone:</td>
+                <td><input type="text" placeholder="+971 XX XXX XXXX" /></td>
+              </tr>
+              <tr>
+                <td class="lbl">Email:</td>
+                <td><input type="text" placeholder="email@client.com" /></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Prepared By (Reloop) -->
+        <div class="meta-box">
+          <div class="meta-box-head">Prepared By</div>
+          <div class="meta-box-body">
+            <table class="meta-table">
+              <tr>
+                <td class="lbl">Name:</td>
+                <td><input type="text" value="Smit Chauhan" /></td>
+              </tr>
+              <tr>
+                <td class="lbl">Position:</td>
+                <td><input type="text" value="Business Development Executive" /></td>
+              </tr>
+              <tr>
+                <td class="lbl">Email:</td>
+                <td><input type="text" value="smit@reloopglobal.com" /></td>
+              </tr>
+              <tr>
+                <td class="lbl">Phone:</td>
+                <td><input type="text" value="+971 543252882" /></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Table -->
+      <table class="item-tbl" id="itemTbl">
+        <thead>
+          <tr>
+            <th style="width:34px" data-fixed="Sr.No">Sr.No</th>
+            <th class="dh" style="min-width:150px;" data-fixed="Description"><span contenteditable="true"
+                style="outline:none;">Description</span></th>
+            <th style="min-width:50px" data-fixed="Qty"><span contenteditable="true" style="outline:none;">Qty</span>
+            </th>
+            <th style="min-width:90px" data-fixed="Unit Price"><span contenteditable="true" style="outline:none;">Unit
+                Price</span> (<span id="curHdr">AED</span>)</th>
+            <th style="min-width:90px" data-fixed="Total"><span contenteditable="true"
+                style="outline:none;">Total</span> (<span id="curHdr4">AED</span>)</th>
+            <th style="min-width:85px" id="vatTh" data-fixed="VAT 5%"><span contenteditable="true"
+                style="outline:none;">VAT 5%</span> (<span id="curHdr3">AED</span>)</th>
+            <th style="min-width:110px" data-fixed="Grand Total"><span contenteditable="true"
+                style="outline:none;">Grand Total</span> (<span id="curHdr2">AED</span>):</th>
+            <th style="width:30px" class="no-print" data-fixed="Action"></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+        <tfoot>
+          <!-- Subtotal Row -->
+          <tr>
+            <td id="footEmpty1" colspan="5" style="border:none; background:transparent;"></td>
+            <td
+              style="font-weight:700; text-align:center; border:1px solid var(--border); font-size:12px; padding:7px; background:#fff;">
+              <span contenteditable="true" style="outline:none;">Subtotal</span></td>
+            <td
+              style="font-weight:800; text-align:center; border:1px solid var(--border); font-size:13px; padding:7px; background:#fff; color:var(--text);"
+              id="subTotalVal"><span class="curSymDisplay">AED</span> 0.00</td>
+            <td class="no-print" style="border:none; background:transparent;"></td>
+          </tr>
+          <!-- VAT Row -->
+          <tr id="vatRow">
+            <td id="footEmpty2" colspan="5" style="border:none; background:transparent;"></td>
+            <td
+              style="font-weight:700; text-align:center; border:1px solid var(--border); font-size:12px; padding:7px; background:#fff;">
+              <span contenteditable="true" style="outline:none;">VAT (5%)</span></td>
+            <td
+              style="font-weight:800; text-align:center; border:1px solid var(--border); font-size:13px; padding:7px; background:#fff; color:var(--text);"
+              id="vatVal"><span class="curSymDisplay">AED</span> 0.00</td>
+            <td class="no-print" style="border:none; background:transparent;"></td>
+          </tr>
+          <!-- Grand Total Row -->
+          <tr class="gt-tr">
+            <td id="footEmpty3" colspan="5" style="border:none;"></td>
+            <td class="gt-lbl" style="vertical-align:middle; text-align:center !important;"><span contenteditable="true"
+                style="outline:none;">Grand Total</span></td>
+            <td class="gt-val" id="gtVal" style="vertical-align:middle;"><span id="curSymDisplay">AED</span> 0.00</td>
+            <td class="no-print" style="background:transparent;border:none;"></td>
+          </tr>
+        </tfoot>
       </table>
+
+    </main>
+
+    <!-- ══ ROW CONTROLS ══ -->
+    <div class="row-ctrl no-print">
+      <button class="btn btn-add" onclick="addRow()">＋ Add Row</button>
+      <span class="row-cnt" id="rowCnt"></span>
     </div>
 
-    <!-- Signature + Stamp -->
-    <div class="sig-col">
-      <div class="sig-row">
-        <!-- Stamp placeholder -->
-        <div class="stamp-placeholder" contenteditable="true">Company<br/>Stamp</div>
-        <!-- Signature block -->
-        <div class="sig-area">
-          <div class="sig-placeholder"></div>
-          <div class="sig-line"></div>
-          <div class="sig-line-lbl" contenteditable="true">Client Acceptance Signature</div>
+
+
+    <!-- ══ BOTTOM SECTION (PAYMENT + SIGNATURE) ══ -->
+    <div class="bottom-section">
+      <!-- Payment Details -->
+      <div class="pay-section">
+        <div class="pay-head">Bank Details</div>
+        <table class="pay-tbl">
+          <tr>
+            <td class="plbl">Payment terms</td>
+            <td><input type="text" id="payTerms" value="Advance / As Agreed" /></td>
+          </tr>
+          <tr>
+            <td class="plbl">Bank Name</td>
+            <td><input type="text" id="bankName" value="ADCB" /></td>
+          </tr>
+          <tr>
+            <td class="plbl">Account Name</td>
+            <td><input type="text" id="accName" value="Reloop Recycling FZE" /></td>
+          </tr>
+          <tr>
+            <td class="plbl">Account Number</td>
+            <td><input type="text" id="accNum" value="14328262920001" /></td>
+          </tr>
+          <tr>
+            <td class="plbl">IBAN</td>
+            <td><input type="text" id="ibanNum" value="AE06 0030 0143 2826 2920 001" /></td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Signature + Stamp -->
+      <div class="sig-col">
+        <div class="sig-row">
+          <!-- Stamp placeholder -->
+          <div class="stamp-placeholder" contenteditable="true">Company<br />Stamp</div>
+          <!-- Signature block -->
+          <div class="sig-area">
+            <div class="sig-placeholder"></div>
+            <div class="sig-line"></div>
+            <div class="sig-line-lbl" contenteditable="true">Client Acceptance Signature</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- ══ FOOTER ══ -->
-  <footer class="po-footer">
-    <!-- Bottom strip -->
-    <div class="foot-strip">
-      <span>📞 +971 543252882</span>
-      <span>🌐 www.reloopglobal.com</span>
-      <span>✉ info@reloopglobal.com</span>
-    </div>
-  </footer>
-
-</div><!-- /inv-doc -->
-
-<!-- ══════════ PAGE 2 — TERMS & CONDITIONS ══════════ -->
-<div class="page2-wrap" id="page2-doc">
-
-  <!-- Page 2 Header -->
-  <div class="top-bar"></div>
-  <div class="page2-header">
-    <div class="page2-header-icon">📋</div>
-    <div class="page2-header-text">
-      <h2 contenteditable="true">Terms & Conditions</h2>
-      <p contenteditable="true">Please review the following terms carefully before acceptance</p>
-    </div>
-  </div>
-
-  <!-- Page 2 Body -->
-  <div class="page2-body">
-
-    <!-- Guarantee Card -->
-    <div class="page2-card">
-      <div class="page2-card-head">
-        <div class="page2-card-icon">🛡️</div>
-        <div class="page2-card-title" contenteditable="true">Our Guarantee</div>
+    <!-- ══ FOOTER ══ -->
+    <footer class="po-footer">
+      <!-- Bottom strip -->
+      <div class="foot-strip">
+        <span>📞 +971 543252882</span>
+        <span>🌐 www.reloopglobal.com</span>
+        <span>✉ info@reloopglobal.com</span>
       </div>
-      <div class="page2-card-body" contenteditable="true">
-        Reloop Recycling guarantees the completely secure, transparent, and eco-friendly destruction of your products. Our process ensures zero leakage into secondary markets. We prioritize sustainability and adhere to the highest global standards for waste management and recycling.
+    </footer>
+
+  </div><!-- /inv-doc -->
+
+  <!-- ══════════ PAGE 2 — TERMS & CONDITIONS ══════════ -->
+  <div class="page2-wrap" id="page2-doc">
+
+    <!-- Page 2 Header -->
+    <div class="top-bar"></div>
+    <div class="page2-header">
+      <div class="page2-header-icon">📋</div>
+      <div class="page2-header-text">
+        <h2 contenteditable="true">Terms & Conditions</h2>
+        <p contenteditable="true">Please review the following terms carefully before acceptance</p>
       </div>
     </div>
 
-    <!-- Terms Card -->
-    <div class="page2-card">
-      <div class="page2-card-head">
-        <div class="page2-card-icon">📄</div>
-        <div class="page2-card-title" contenteditable="true">Terms & Conditions</div>
+    <!-- Page 2 Body -->
+    <div class="page2-body">
+
+      <!-- Guarantee Card -->
+      <div class="page2-card">
+        <div class="page2-card-head">
+          <div class="page2-card-icon">🛡️</div>
+          <div class="page2-card-title" contenteditable="true">Our Guarantee</div>
+        </div>
+        <div class="page2-card-body" contenteditable="true">
+          Reloop Recycling guarantees the completely secure, transparent, and eco-friendly destruction of your products.
+          Our process ensures zero leakage into secondary markets. We prioritize sustainability and adhere to the
+          highest global standards for waste management and recycling.
+        </div>
       </div>
-      <div class="page2-card-body" contenteditable="true">
-        <ul>
-          <li><strong>Proposal Validity:</strong> 15 Days from the date of issuance.</li>
-          <li><strong>Weight Measurement:</strong> Final weight considered for billing will be exactly as recorded at our recycling facility.</li>
-          <li><strong>Compliance:</strong> Operations comply with UAE local municipality regulations.</li>
-        </ul>
+
+      <!-- Terms Card -->
+      <div class="page2-card">
+        <div class="page2-card-head">
+          <div class="page2-card-icon">📄</div>
+          <div class="page2-card-title" contenteditable="true">Terms & Conditions</div>
+        </div>
+        <div class="page2-card-body" contenteditable="true">
+          <ul>
+            <li><strong>Proposal Validity:</strong> 15 Days from the date of issuance.</li>
+            <li><strong>Weight Measurement:</strong> Final weight considered for billing will be exactly as recorded at
+              our recycling facility.</li>
+            <li><strong>Compliance:</strong> Operations comply with UAE local municipality regulations.</li>
+          </ul>
+        </div>
       </div>
+
     </div>
 
-  </div>
+    <!-- Page 2 Footer -->
+    <div class="page2-footer-strip">
+      📞 +971 543252882 &nbsp;&nbsp;|&nbsp;&nbsp; 🌐 www.reloopglobal.com &nbsp;&nbsp;|&nbsp;&nbsp; ✉
+      info@reloopglobal.com
+    </div>
 
-  <!-- Page 2 Footer -->
-  <div class="page2-footer-strip">
-    📞 +971 543252882 &nbsp;&nbsp;|&nbsp;&nbsp; 🌐 www.reloopglobal.com &nbsp;&nbsp;|&nbsp;&nbsp; ✉ info@reloopglobal.com
-  </div>
+  </div><!-- /page2-doc -->
 
-</div><!-- /page2-doc -->
+  <script>
+    /* ── State ── */
+    let rowId = 0;
+    let customColId = 0;
+    let customCols = [];
+    let curCode = 'AED';
+    let isVatActive = true;
 
-<script>
-  /* ── State ── */
-  let rowId   = 0;
-  let customColId = 0;
-  let customCols = [];
-  let curCode = 'AED';
-  let isVatActive = true;
+    const SYM = { AED: 'AED', USD: '$', EUR: '€', GBP: '£', INR: '₹' };
 
-  const SYM = { AED:'AED', USD:'$', EUR:'€', GBP:'£', INR:'₹' };
+    function toggleVat() {
+      isVatActive = document.getElementById('vatToggle').checked;
 
-  function toggleVat() {
-    isVatActive = document.getElementById('vatToggle').checked;
-    
-    // Hide/show Header
-    document.getElementById('vatTh').style.display = isVatActive ? '' : 'none';
-    
-    // Hide/show row cells
-    document.querySelectorAll('.vat-td').forEach(td => {
-      td.style.display = isVatActive ? '' : 'none';
+      // Hide/show Header
+      document.getElementById('vatTh').style.display = isVatActive ? '' : 'none';
+
+      // Hide/show row cells
+      document.querySelectorAll('.vat-td').forEach(td => {
+        td.style.display = isVatActive ? '' : 'none';
+      });
+
+      // Hide/show footer
+      document.getElementById('vatRow').style.display = isVatActive ? '' : 'none';
+
+      updateColspan();
+
+      // Recalculate
+      document.querySelectorAll('#tbody tr').forEach(tr => {
+        const qi = tr.querySelector('.qi');
+        if (qi) qi.dispatchEvent(new Event('input'));
+      });
+    }
+
+    /* ── Auto Resize Inputs ── */
+    function resizeInput(el) {
+      if (!el) return;
+      const val = el.value || el.placeholder || '';
+      // Adjust min-width based on character length (using ch unit)
+      el.style.minWidth = Math.max(5, val.length + 1.5) + 'ch';
+    }
+
+    /* ── Init ── */
+    document.addEventListener('DOMContentLoaded', () => {
+      const d = new Date();
+      const mo = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      document.getElementById('propDate').value = `${d.getDate()}-${mo[d.getMonth()]}-${d.getFullYear()}`;
+      for (let i = 0; i < 4; i++) addRow();
     });
-    
-    // Hide/show footer
-    document.getElementById('vatRow').style.display = isVatActive ? '' : 'none';
-    
-    updateColspan();
-    
-    // Recalculate
-    document.querySelectorAll('#tbody tr').forEach(tr => {
-      const qi = tr.querySelector('.qi');
-      if (qi) qi.dispatchEvent(new Event('input'));
-    });
-  }
 
-  /* ── Auto Resize Inputs ── */
-  function resizeInput(el) {
-    if (!el) return;
-    const val = el.value || el.placeholder || '';
-    // Adjust min-width based on character length (using ch unit)
-    el.style.minWidth = Math.max(5, val.length + 1.5) + 'ch';
-  }
+    /* ── Custom Columns ── */
+    function addCustomCol() {
+      customColId++;
+      const id = customColId;
 
-  /* ── Init ── */
-  document.addEventListener('DOMContentLoaded', () => {
-    const d  = new Date();
-    const mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    document.getElementById('propDate').value = `${d.getDate()}-${mo[d.getMonth()]}-${d.getFullYear()}`;
-    for (let i = 0; i < 4; i++) addRow();
-  });
-
-  /* ── Custom Columns ── */
-  function addCustomCol() {
-    customColId++;
-    const id = customColId;
-    
-    const th = document.createElement('th');
-    th.id = `thCust${id}`;
-    th.dataset.custom = id;
-    th.innerHTML = `
+      const th = document.createElement('th');
+      th.id = `thCust${id}`;
+      th.dataset.custom = id;
+      th.innerHTML = `
       <div contenteditable="true" style="margin-bottom:4px; outline:none; border-bottom:1px dashed rgba(255,255,255,0.4);">Custom Col</div>
       <div class="col-ctrls no-print">
         <button class="col-btn" onclick="moveCol(${id}, -1)">◀</button>
@@ -807,271 +1265,272 @@
         <button class="col-btn" onclick="moveCol(${id}, 1)">▶</button>
       </div>
     `;
-    
-    // Insert before Qty
-    const qtyTh = document.querySelector('th[data-fixed="Qty"]');
-    qtyTh.parentNode.insertBefore(th, qtyTh);
-    
-    const ths = Array.from(qtyTh.parentNode.children);
-    const targetIdx = ths.indexOf(th);
-    
-    const rows = document.querySelectorAll('#tbody tr');
-    rows.forEach(tr => {
-      const td = document.createElement('td');
-      td.className = `tdCust${id}`;
-      td.innerHTML = `<textarea placeholder="..." class="desc-ta" rows="1" style="text-align:center;"></textarea>`;
-      td.querySelector('textarea').addEventListener('input', function() {
-        this.style.height = 'auto';
-        this.style.height = this.scrollHeight + 'px';
-      });
-      
-      const tds = Array.from(tr.children);
-      if (targetIdx < tds.length) {
-        tr.insertBefore(td, tds[targetIdx]);
-      } else {
-        tr.appendChild(td);
-      }
-    });
-    
-    customCols.push(id);
-    updateColspan();
-  }
 
-  function rmCol(id) {
-    document.getElementById(`thCust${id}`)?.remove();
-    document.querySelectorAll(`.tdCust${id}`).forEach(td => td.remove());
-    customCols = customCols.filter(c => c !== id);
-    updateColspan();
-  }
+      // Insert before Qty
+      const qtyTh = document.querySelector('th[data-fixed="Qty"]');
+      qtyTh.parentNode.insertBefore(th, qtyTh);
 
-  function moveCol(id, dir) {
-    const th = document.getElementById(`thCust${id}`);
-    if (!th) return;
-    
-    const trHead = th.parentNode;
-    const thArray = Array.from(trHead.children);
-    const currIdx = thArray.indexOf(th);
-    const targetIdx = currIdx + dir;
-    
-    if (targetIdx <= 0 || targetIdx >= thArray.length - 1) return;
-    
-    if (dir === -1) {
-      trHead.insertBefore(th, thArray[targetIdx]);
-    } else {
-      trHead.insertBefore(th, thArray[targetIdx].nextSibling);
-    }
-    
-    const rows = document.querySelectorAll('#tbody tr');
-    rows.forEach(tr => {
-      const tdArray = Array.from(tr.children);
-      const currTd = tr.querySelector(`.tdCust${id}`);
-      if (!currTd) return;
-      if (dir === -1) {
-        tr.insertBefore(currTd, tdArray[targetIdx]);
-      } else {
-        tr.insertBefore(currTd, tdArray[targetIdx].nextSibling);
-      }
-    });
-  }
+      const ths = Array.from(qtyTh.parentNode.children);
+      const targetIdx = ths.indexOf(th);
 
-  function updateColspan() {
-    const baseColspan = isVatActive ? 5 : 4;
-    const newColspan = baseColspan + customCols.length;
-    document.querySelectorAll('#footEmpty1, #footEmpty2, #footEmpty3').forEach(td => {
-      td.setAttribute('colspan', newColspan);
-    });
-  }
-
-  /* ── Add Row ── */
-  function addRow() {
-    rowId++;
-    const id = rowId;
-    const tr = document.createElement('tr');
-    tr.id = `r${id}`;
-
-    const cellBuilders = {
-      'Sr.No': () => { const td = document.createElement('td'); td.className="sr"; td.id=`sr${id}`; td.textContent = document.querySelectorAll('#tbody tr').length + 1; return td; },
-      'Description': () => { const td = document.createElement('td'); td.className="dtd"; td.innerHTML = `<textarea placeholder="Item description" id="d${id}" class="desc-ta" rows="1"></textarea>`; return td; },
-      'Qty': () => { const td = document.createElement('td'); td.className="qty-td"; td.innerHTML = `<input type="number" min="0" step="any" placeholder="0" id="q${id}" class="qi" inputmode="decimal"/>`; return td; },
-      'Unit Price': () => { const td = document.createElement('td'); td.innerHTML = `<input type="number" min="0" step="any" placeholder="0.00" id="rt${id}" class="ri" inputmode="decimal"/>`; return td; },
-      'Total': () => { const td = document.createElement('td'); td.innerHTML = `<input type="number" min="0" step="any" placeholder="0.00" id="t${id}" class="ti" readonly tabindex="-1" style="color:var(--text); outline:none; background:transparent; border:none; text-align:center;"/>`; return td; },
-      'VAT 5%': () => { const td = document.createElement('td'); td.className="vat-td"; td.innerHTML = `<input type="number" min="0" step="any" placeholder="0.00" id="v${id}" class="vi" readonly tabindex="-1" style="color:var(--text); outline:none; background:transparent; border:none; text-align:center;"/>`; if(!isVatActive) td.style.display='none'; return td; },
-      'Grand Total': () => { const td = document.createElement('td'); td.innerHTML = `<input type="number" min="0" step="any" placeholder="0.00" id="a${id}" class="ai amt-inp" inputmode="decimal"/>`; return td; },
-      'Action': () => { const td = document.createElement('td'); td.className="no-print"; td.innerHTML = `<button class="rm-btn" onclick="removeRow(${id})" title="Remove">✕</button>`; return td; }
-    };
-
-    const ths = document.querySelectorAll('#itemTbl thead th');
-    ths.forEach(th => {
-      if (th.dataset.fixed) {
-        tr.appendChild(cellBuilders[th.dataset.fixed]());
-      } else if (th.dataset.custom) {
-        const custId = th.dataset.custom;
+      const rows = document.querySelectorAll('#tbody tr');
+      rows.forEach(tr => {
         const td = document.createElement('td');
-        td.className = `tdCust${custId}`;
+        td.className = `tdCust${id}`;
         td.innerHTML = `<textarea placeholder="..." class="desc-ta" rows="1" style="text-align:center;"></textarea>`;
-        tr.appendChild(td);
-      }
-    });
+        td.querySelector('textarea').addEventListener('input', function () {
+          this.style.height = 'auto';
+          this.style.height = this.scrollHeight + 'px';
+        });
 
-    // Wire events
-    const qi = tr.querySelector('.qi');
-    const ri = tr.querySelector('.ri');
-    const ti = tr.querySelector('.ti');
-    const vi = tr.querySelector('.vi');
-    const ai = tr.querySelector('.ai');
-
-    tr.querySelectorAll('.desc-ta').forEach(ta => {
-      ta.addEventListener('input', function() {
-        this.style.height = 'auto';
-        this.style.height = this.scrollHeight + 'px';
+        const tds = Array.from(tr.children);
+        if (targetIdx < tds.length) {
+          tr.insertBefore(td, tds[targetIdx]);
+        } else {
+          tr.appendChild(td);
+        }
       });
-    });
 
-    let calcMode = 'forward';
-
-    function doCalc() {
-      if (calcMode === 'forward') {
-        const q = parseFloat(qi.value) || 0;
-        const r = parseFloat(ri.value) || 0;
-        if (q > 0 && r > 0) {
-          const base = q * r;
-          const vatAmt = isVatActive ? base * 0.05 : 0;
-          ti.value = base.toFixed(2);
-          vi.value = vatAmt.toFixed(2);
-          ai.value = (base + vatAmt).toFixed(2);
-        } else {
-          ti.value = '';
-          vi.value = '';
-          ai.value = '';
-        }
-      } else {
-        const q = parseFloat(qi.value) || 1;
-        const a = parseFloat(ai.value) || 0;
-        if (a > 0) {
-          const vatMultiplier = isVatActive ? 1.05 : 1;
-          const base = a / vatMultiplier;
-          const r = base / q;
-          const vatAmt = a - base;
-          ri.value = r.toFixed(2);
-          ti.value = base.toFixed(2);
-          vi.value = vatAmt.toFixed(2);
-        } else {
-          ri.value = '';
-          ti.value = '';
-          vi.value = '';
-        }
-      }
-      // Resize updated inputs
-      [ri, ti, vi, ai].forEach(resizeInput);
-      recalcTotal();
+      customCols.push(id);
+      updateColspan();
     }
 
-    qi.addEventListener('input', function() { resizeInput(this); doCalc(); });
-    ri.addEventListener('input', function() { calcMode = 'forward'; resizeInput(this); doCalc(); });
-    ai.addEventListener('input', function() { calcMode = 'backward'; resizeInput(this); doCalc(); });
+    function rmCol(id) {
+      document.getElementById(`thCust${id}`)?.remove();
+      document.querySelectorAll(`.tdCust${id}`).forEach(td => td.remove());
+      customCols = customCols.filter(c => c !== id);
+      updateColspan();
+    }
 
-    // Initialize sizes
-    [qi, ri, ti, vi, ai].forEach(resizeInput);
+    function moveCol(id, dir) {
+      const th = document.getElementById(`thCust${id}`);
+      if (!th) return;
 
-    document.getElementById('tbody').appendChild(tr);
-    updateRowCount();
-  }
+      const trHead = th.parentNode;
+      const thArray = Array.from(trHead.children);
+      const currIdx = thArray.indexOf(th);
+      const targetIdx = currIdx + dir;
 
-  /* ── Remove Row ── */
-  function removeRow(id) {
-    const rows = document.querySelectorAll('#tbody tr');
-    if (rows.length <= 1) { alert('At least one row is required.'); return; }
-    document.getElementById(`r${id}`)?.remove();
-    renumber();
-    recalcTotal();
-    updateRowCount();
-  }
+      if (targetIdx <= 0 || targetIdx >= thArray.length - 1) return;
 
-  /* ── Renumber ── */
-  function renumber() {
-    document.querySelectorAll('#tbody tr').forEach((tr, i) => {
-      const srEl = tr.querySelector('[id^="sr"]');
-      if (srEl) srEl.textContent = i + 1;
-    });
-  }
+      if (dir === -1) {
+        trHead.insertBefore(th, thArray[targetIdx]);
+      } else {
+        trHead.insertBefore(th, thArray[targetIdx].nextSibling);
+      }
 
-  /* ── Recalc Grand Total ── */
-  function recalcTotal() {
-    let subtotalBase = 0;
-    let totalVat = 0;
-    let grandTotal = 0;
-    
-    document.querySelectorAll('#tbody tr').forEach(tr => {
+      const rows = document.querySelectorAll('#tbody tr');
+      rows.forEach(tr => {
+        const tdArray = Array.from(tr.children);
+        const currTd = tr.querySelector(`.tdCust${id}`);
+        if (!currTd) return;
+        if (dir === -1) {
+          tr.insertBefore(currTd, tdArray[targetIdx]);
+        } else {
+          tr.insertBefore(currTd, tdArray[targetIdx].nextSibling);
+        }
+      });
+    }
+
+    function updateColspan() {
+      const baseColspan = isVatActive ? 5 : 4;
+      const newColspan = baseColspan + customCols.length;
+      document.querySelectorAll('#footEmpty1, #footEmpty2, #footEmpty3').forEach(td => {
+        td.setAttribute('colspan', newColspan);
+      });
+    }
+
+    /* ── Add Row ── */
+    function addRow() {
+      rowId++;
+      const id = rowId;
+      const tr = document.createElement('tr');
+      tr.id = `r${id}`;
+
+      const cellBuilders = {
+        'Sr.No': () => { const td = document.createElement('td'); td.className = "sr"; td.id = `sr${id}`; td.textContent = document.querySelectorAll('#tbody tr').length + 1; return td; },
+        'Description': () => { const td = document.createElement('td'); td.className = "dtd"; td.innerHTML = `<textarea placeholder="Item description" id="d${id}" class="desc-ta" rows="1"></textarea>`; return td; },
+        'Qty': () => { const td = document.createElement('td'); td.className = "qty-td"; td.innerHTML = `<input type="number" min="0" step="any" placeholder="0" id="q${id}" class="qi" inputmode="decimal"/>`; return td; },
+        'Unit Price': () => { const td = document.createElement('td'); td.innerHTML = `<input type="number" min="0" step="any" placeholder="0.00" id="rt${id}" class="ri" inputmode="decimal"/>`; return td; },
+        'Total': () => { const td = document.createElement('td'); td.innerHTML = `<input type="number" min="0" step="any" placeholder="0.00" id="t${id}" class="ti" readonly tabindex="-1" style="color:var(--text); outline:none; background:transparent; border:none; text-align:center;"/>`; return td; },
+        'VAT 5%': () => { const td = document.createElement('td'); td.className = "vat-td"; td.innerHTML = `<input type="number" min="0" step="any" placeholder="0.00" id="v${id}" class="vi" readonly tabindex="-1" style="color:var(--text); outline:none; background:transparent; border:none; text-align:center;"/>`; if (!isVatActive) td.style.display = 'none'; return td; },
+        'Grand Total': () => { const td = document.createElement('td'); td.innerHTML = `<input type="number" min="0" step="any" placeholder="0.00" id="a${id}" class="ai amt-inp" inputmode="decimal"/>`; return td; },
+        'Action': () => { const td = document.createElement('td'); td.className = "no-print"; td.innerHTML = `<button class="rm-btn" onclick="removeRow(${id})" title="Remove">✕</button>`; return td; }
+      };
+
+      const ths = document.querySelectorAll('#itemTbl thead th');
+      ths.forEach(th => {
+        if (th.dataset.fixed) {
+          tr.appendChild(cellBuilders[th.dataset.fixed]());
+        } else if (th.dataset.custom) {
+          const custId = th.dataset.custom;
+          const td = document.createElement('td');
+          td.className = `tdCust${custId}`;
+          td.innerHTML = `<textarea placeholder="..." class="desc-ta" rows="1" style="text-align:center;"></textarea>`;
+          tr.appendChild(td);
+        }
+      });
+
+      // Wire events
+      const qi = tr.querySelector('.qi');
+      const ri = tr.querySelector('.ri');
       const ti = tr.querySelector('.ti');
       const vi = tr.querySelector('.vi');
       const ai = tr.querySelector('.ai');
-      
-      subtotalBase += parseFloat(ti ? ti.value : 0) || 0;
-      totalVat += parseFloat(vi ? vi.value : 0) || 0;
-      grandTotal += parseFloat(ai ? ai.value : 0) || 0;
+
+      tr.querySelectorAll('.desc-ta').forEach(ta => {
+        ta.addEventListener('input', function () {
+          this.style.height = 'auto';
+          this.style.height = this.scrollHeight + 'px';
+        });
+      });
+
+      let calcMode = 'forward';
+
+      function doCalc() {
+        if (calcMode === 'forward') {
+          const q = parseFloat(qi.value) || 0;
+          const r = parseFloat(ri.value) || 0;
+          if (q > 0 && r > 0) {
+            const base = q * r;
+            const vatAmt = isVatActive ? base * 0.05 : 0;
+            ti.value = base.toFixed(2);
+            vi.value = vatAmt.toFixed(2);
+            ai.value = (base + vatAmt).toFixed(2);
+          } else {
+            ti.value = '';
+            vi.value = '';
+            ai.value = '';
+          }
+        } else {
+          const q = parseFloat(qi.value) || 1;
+          const a = parseFloat(ai.value) || 0;
+          if (a > 0) {
+            const vatMultiplier = isVatActive ? 1.05 : 1;
+            const base = a / vatMultiplier;
+            const r = base / q;
+            const vatAmt = a - base;
+            ri.value = r.toFixed(2);
+            ti.value = base.toFixed(2);
+            vi.value = vatAmt.toFixed(2);
+          } else {
+            ri.value = '';
+            ti.value = '';
+            vi.value = '';
+          }
+        }
+        // Resize updated inputs
+        [ri, ti, vi, ai].forEach(resizeInput);
+        recalcTotal();
+      }
+
+      qi.addEventListener('input', function () { resizeInput(this); doCalc(); });
+      ri.addEventListener('input', function () { calcMode = 'forward'; resizeInput(this); doCalc(); });
+      ai.addEventListener('input', function () { calcMode = 'backward'; resizeInput(this); doCalc(); });
+
+      // Initialize sizes
+      [qi, ri, ti, vi, ai].forEach(resizeInput);
+
+      document.getElementById('tbody').appendChild(tr);
+      updateRowCount();
+    }
+
+    /* ── Remove Row ── */
+    function removeRow(id) {
+      const rows = document.querySelectorAll('#tbody tr');
+      if (rows.length <= 1) { alert('At least one row is required.'); return; }
+      document.getElementById(`r${id}`)?.remove();
+      renumber();
+      recalcTotal();
+      updateRowCount();
+    }
+
+    /* ── Renumber ── */
+    function renumber() {
+      document.querySelectorAll('#tbody tr').forEach((tr, i) => {
+        const srEl = tr.querySelector('[id^="sr"]');
+        if (srEl) srEl.textContent = i + 1;
+      });
+    }
+
+    /* ── Recalc Grand Total ── */
+    function recalcTotal() {
+      let subtotalBase = 0;
+      let totalVat = 0;
+      let grandTotal = 0;
+
+      document.querySelectorAll('#tbody tr').forEach(tr => {
+        const ti = tr.querySelector('.ti');
+        const vi = tr.querySelector('.vi');
+        const ai = tr.querySelector('.ai');
+
+        subtotalBase += parseFloat(ti ? ti.value : 0) || 0;
+        totalVat += parseFloat(vi ? vi.value : 0) || 0;
+        grandTotal += parseFloat(ai ? ai.value : 0) || 0;
+      });
+
+      const sym = SYM[curCode] || curCode;
+
+      document.getElementById('subTotalVal').innerHTML = `<span class="curSymDisplay">${sym}</span> ${fmtN(subtotalBase)}`;
+      document.getElementById('vatVal').innerHTML = `<span class="curSymDisplay">${sym}</span> ${fmtN(totalVat)}`;
+      document.getElementById('gtVal').innerHTML = `<span id="curSymDisplay">${sym}</span> ${fmtN(grandTotal)}`;
+    }
+
+    /* ── Format number ── */
+    function fmtN(n) {
+      return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    /* ── Currency change ── */
+    function applyCurrency() {
+      curCode = document.getElementById('curSel').value;
+      const sym = SYM[curCode] || curCode;
+      // Update column headers
+      document.querySelectorAll('#curHdr, #curHdr2, #curHdr3, #curHdr4').forEach(el => el.textContent = curCode);
+      recalcTotal();
+    }
+
+    /* ── Row count label ── */
+    function updateRowCount() {
+      const c = document.querySelectorAll('#tbody tr').length;
+      document.getElementById('rowCnt').textContent = `${c} row${c !== 1 ? 's' : ''}`;
+    }
+
+    /* ── Print Scaling ── */
+    window.addEventListener('beforeprint', () => {
+      const tbl = document.getElementById('itemTbl');
+      if (tbl) {
+        const oldW = tbl.style.width;
+        tbl.style.width = 'min-content';
+        const intrinsicW = tbl.offsetWidth + 20;
+        tbl.style.width = oldW;
+
+        const safeW = 850; // Increased a bit for proposal width (max-width:900)
+        if (intrinsicW > safeW) {
+          document.documentElement.style.setProperty('--print-zoom', safeW / intrinsicW);
+        } else {
+          document.documentElement.style.setProperty('--print-zoom', 1);
+        }
+      }
     });
-    
-    const sym = SYM[curCode] || curCode;
-    
-    document.getElementById('subTotalVal').innerHTML = `<span class="curSymDisplay">${sym}</span> ${fmtN(subtotalBase)}`;
-    document.getElementById('vatVal').innerHTML = `<span class="curSymDisplay">${sym}</span> ${fmtN(totalVat)}`;
-    document.getElementById('gtVal').innerHTML = `<span id="curSymDisplay">${sym}</span> ${fmtN(grandTotal)}`;
-  }
 
-  /* ── Format number ── */
-  function fmtN(n) {
-    return n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
-  }
+    window.addEventListener('afterprint', () => {
+      document.documentElement.style.setProperty('--print-zoom', 1);
+    });
 
-  /* ── Currency change ── */
-  function applyCurrency() {
-    curCode = document.getElementById('curSel').value;
-    const sym = SYM[curCode] || curCode;
-    // Update column headers
-    document.querySelectorAll('#curHdr, #curHdr2, #curHdr3, #curHdr4').forEach(el => el.textContent = curCode);
-    recalcTotal();
-  }
-
-  /* ── Row count label ── */
-  function updateRowCount() {
-    const c = document.querySelectorAll('#tbody tr').length;
-    document.getElementById('rowCnt').textContent = `${c} row${c!==1?'s':''}`;
-  }
-
-  /* ── Print Scaling ── */
-  window.addEventListener('beforeprint', () => {
-    const tbl = document.getElementById('itemTbl');
-    if (tbl) {
-      const oldW = tbl.style.width;
-      tbl.style.width = 'min-content';
-      const intrinsicW = tbl.offsetWidth + 20;
-      tbl.style.width = oldW;
-      
-      const safeW = 850; // Increased a bit for proposal width (max-width:900)
-      if (intrinsicW > safeW) {
-        document.documentElement.style.setProperty('--print-zoom', safeW / intrinsicW);
-      } else {
-        document.documentElement.style.setProperty('--print-zoom', 1);
+    /* ════════════════ AUTO-RESIZE INPUTS ════════════════ */
+    document.addEventListener('input', function (e) {
+      if (e.target.tagName.toLowerCase() === 'input' && e.target.type === 'text' && !e.target.closest('.item-tbl')) {
+        const len = e.target.value.length;
+        if (len > 8) {
+          e.target.style.minWidth = (len * 8.5) + 'px';
+        } else {
+          e.target.style.minWidth = '70px';
+        }
       }
-    }
-  });
-
-  window.addEventListener('afterprint', () => {
-    document.documentElement.style.setProperty('--print-zoom', 1);
-  });
-
-  /* ════════════════ AUTO-RESIZE INPUTS ════════════════ */
-  document.addEventListener('input', function(e) {
-    if (e.target.tagName.toLowerCase() === 'input' && e.target.type === 'text' && !e.target.closest('.item-tbl')) {
-      const len = e.target.value.length;
-      if (len > 8) {
-        e.target.style.minWidth = (len * 8.5) + 'px';
-      } else {
-        e.target.style.minWidth = '70px';
-      }
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
+
 </html>
